@@ -1,0 +1,18 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+# Connection string
+connection_string = "mssql+pyodbc://rozkosny:HESLO@skoleni.database.windows.net:1433/skoleni?driver=ODBC+Driver+18+for+SQL+Server"
+
+# Vytvoření engine pro připojení k databázi
+conn = create_engine(connection_string)
+
+# SQL dotaz
+sql_query = "SELECT * FROM dim_oblasti;"  # Zadejte svůj SQL dotaz
+
+# Načtení výsledků do pandas DataFrame
+df = pd.read_sql(sql_query, conn)
+
+
+# Zobrazení výsledného DataFrame
+print(df)
