@@ -1,0 +1,3 @@
+# Přidání anotace "Povodně" k hodnotě na ose x
+ax.annotate('Povodně', xy=(7, df['PRCP'][7]), xytext=(7, df['PRCP'][5]+10),  # xy je bod, kde přidáme anotaci, xytext je pozice textu
+            arrowprops=dict(facecolor='black', arrowstyle='->'))
